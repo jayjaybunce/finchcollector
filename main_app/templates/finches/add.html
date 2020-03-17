@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+    <form class="col s12" action="{% url 'finches:new_finch'%}" method="POST">
+    {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Finch Name" id="finch_name" name="finch_name" type="text" class="validate">
+          <label for="finch_name"></label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Finch Color" id="finch_color" name="finch_color" type="text" class="validate">
+          <label for="finhc_color"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input value="" placeholder="Finch Age"id="finch_color" name="finch_age"type="text" class="validate">
+          <label for="finch_color"></label>
+        </div>
+      </div>
+      
+    <div class="row">
+        <button class="btn" type="submit">Add</button>
+    </div>
+    </form>
+  </div>
+{% endblock  %}

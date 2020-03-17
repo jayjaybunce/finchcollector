@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+    <form class="col s12" action="{% url 'finches:update_finch' finch.id%}" method="POST">
+    {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Finch Name" id="finch_name" name="finch_name" value="{{ finch.name }}" type="text" class="validate">
+          <label for="finch_name"></label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Finch Color" id="finch_color" name="finch_color" type="text" class="validate" value="{{ finch.color }}">
+          <label for="finhc_color"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  placeholder="Finch Age"id="finch_color" value="{{ finch.age }}" name="finch_age"type="number" class="validate">
+          <label for="finch_color"></label>
+        </div>
+      </div>
+      
+    <div class="row">
+        <button class="btn" type="submit">Update</button>
+    </div>
+    </form>
+  </div>
+{% endblock  %}
