@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for toy in toys %}
+    <div class="card">
+        {% comment %} <a href="{% url 'finches:detail' finch.id%}"> {% endcomment %}
+        <div class="card-content">
+        <span class="card-title">{{ toy.name }}</span>
+        <p>Color: {{ toy.color }}</p>
+        
+        </div>
+        </a>
+    </div>
+        {% endfor %}
+        <form action="{% url 'finches:add_toy'%}" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_table }}
+            <input type="submit" class="btn indigo">
+        </form>
+       
+{% endblock  %}

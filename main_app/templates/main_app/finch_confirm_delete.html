@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="POST">
+    {% csrf_token %}
+        <h2>Delete {{finch.name}}?
+        <input type="submit" value="Yes, delete!">
+    </form>
+{% endblock  %}

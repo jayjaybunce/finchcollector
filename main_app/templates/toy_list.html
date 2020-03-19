@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>this is something</h1>
+    {% for toy in toys %}
+    <div class="card">
+        {% comment %} <a href="{% url 'finches:detail' finch.id%}"> {% endcomment %}
+        <div class="card-content">
+        <span class="card-title">{{ toyname }}</span>
+        <p>Color: {{ toy.color }}</p>
+        
+        </div>
+        </a>
+    </div>
+    {% endfor %}
+{% endblock  %}
