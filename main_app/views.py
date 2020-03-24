@@ -50,7 +50,7 @@ class FinchCreate(LoginRequiredMixin,CreateView):
 
 class FinchUpdate(LoginRequiredMixin,UpdateView):
     model = Finch
-    fields = '__all__'
+    fields = ['name','color','age']
 
 
 class FinchDelete(LoginRequiredMixin,DeleteView):
@@ -164,3 +164,6 @@ def finch_remove_toy(request, finch_id, toy_id):
 
 
 
+
+def about(request):
+    return render(request,'finches/about.html')
